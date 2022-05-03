@@ -59,6 +59,10 @@ class TextEditorWebView : EditorWebView() {
             getWebView().settings.userAgentString = generateOnlyOfficeUserAgent()
         }
 
+        if (editor != null && editor.id == "text") {
+            getWebView().settings.userAgentString = "Android 10"
+        }
+
         getWebView().addJavascriptInterface(MobileInterface(), "DirectEditingMobileInterface")
 
         if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY)) {
